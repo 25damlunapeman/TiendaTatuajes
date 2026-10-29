@@ -6,21 +6,24 @@ import javax.swing.*;
 
 public class Ventana {
     private JPanel panel1;
-    private JRadioButton tatuajesRadioButton;
-    private JRadioButton piercingsRadioButton;
-    private JTextField NombreTxt;
-    private JButton nuevoButton;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JList list1;
-    private JTextField textField3;
-    private JLabel tamannoMaterialLbl;
-    private JLabel estiloTipoJoyaLbl;
-    private JLabel colorTintaLbl;
-    private JLabel sesionesCicatrizacionLbl;
-    private JButton importarButton;
-    private JButton exportarButton;
-    private JSpinner spinner1;
+    public JRadioButton tatuajesRadioButton;
+    public JRadioButton piercingsRadioButton;
+    public JTextField NombreTxt;
+    public JButton nuevoButton;
+    public JTextField precioTxt;
+    public JTextField zonaTxt;
+    public JList list1;
+    public JTextField telefonoClienteTxt;
+    public JLabel tamannoMaterialLbl;
+    public JLabel estiloTipoJoyaLbl;
+    public JLabel colorTintaLbl;
+    public JLabel sesionesCicatrizacionLbl;
+    public JButton importarButton;
+    public JButton exportarButton;
+    public JSpinner spinner1;
+    private JTextField tamannoTxt;
+    private JTextField estiloTipoJoyaTxt;
+    private JTextField colorTintaTxt;
 
     //creados por mi
     public JFrame frame;

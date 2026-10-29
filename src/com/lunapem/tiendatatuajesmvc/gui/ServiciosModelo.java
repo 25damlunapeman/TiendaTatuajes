@@ -3,7 +3,9 @@ package com.lunapem.tiendatatuajesmvc.gui;
 import com.lunapem.tiendatatuajesmvc.base.Piercing;
 import com.lunapem.tiendatatuajesmvc.base.Servicio;
 import com.lunapem.tiendatatuajesmvc.base.Tatuaje;
+
 import org.w3c.dom.*;
+
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -12,8 +14,10 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+
 import java.io.File;
 import java.io.IOException;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
