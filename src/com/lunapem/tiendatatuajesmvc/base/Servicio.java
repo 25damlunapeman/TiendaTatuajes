@@ -2,18 +2,18 @@ package com.lunapem.tiendatatuajesmvc.base;
 
 import java.time.LocalDate;
 
-public abstract class Servicios {
+public abstract class Servicio {
     private String nombreCliente;
     private String telefonoCliente;
     private LocalDate fechaCita;
     private float precio;
     private String zona;
 
-    public Servicios(){
+    public Servicio(){
 
     }
 
-    public Servicios(String nombreCliente, String telefonoCliente, LocalDate fechaCita, float precio, String zona) {
+    public Servicio(String nombreCliente, String telefonoCliente, LocalDate fechaCita, float precio, String zona) {
         this.nombreCliente = nombreCliente;
         this.telefonoCliente = telefonoCliente;
         this.fechaCita = fechaCita;

@@ -2,22 +2,20 @@ package com.lunapem.tiendatatuajesmvc.base;
 
 import java.time.LocalDate;
 
-public class Piercings extends Servicios{
+public class Piercing extends Servicio {
     private String material;
     private String tipoJoya;
-    private int tiempoCicatrizacion;
-    private String colorJoya;
+    private double tiempoCicatrizacion;
 
-    public Piercings(){
+    public Piercing(){
         super();
     }
 
-    public Piercings(String nombreCliente, String telefonoCliente, LocalDate fechaCita, float precio, String zona, String material, String tipoJoya, int tiempoCicatrizacion, String colorJoya) {
+    public Piercing(String nombreCliente, String telefonoCliente, LocalDate fechaCita, float precio, String zona, String material, String tipoJoya, double tiempoCicatrizacion) {
         super(nombreCliente, telefonoCliente, fechaCita, precio, zona);
         this.material = material;
         this.tipoJoya = tipoJoya;
         this.tiempoCicatrizacion = tiempoCicatrizacion;
-        this.colorJoya = colorJoya;
     }
 
     public String getMaterial() {
@@ -36,20 +34,12 @@ public class Piercings extends Servicios{
         this.tipoJoya = tipoJoya;
     }
 
-    public int getTiempoCicatrizacion() {
+    public double getTiempoCicatrizacion() {
         return tiempoCicatrizacion;
     }
 
-    public void setTiempoCicatrizacion(int tiempoCicatrizacion) {
+    public void setTiempoCicatrizacion(double tiempoCicatrizacion) {
         this.tiempoCicatrizacion = tiempoCicatrizacion;
-    }
-
-    public String getColorJoya() {
-        return colorJoya;
-    }
-
-    public void setColorJoya(String colorJoya) {
-        this.colorJoya = colorJoya;
     }
 
     @Override

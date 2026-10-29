@@ -1,6 +1,6 @@
 package com.lunapem.tiendatatuajesmvc.gui;
 
-import com.lunapem.tiendatatuajesmvc.base.Servicios;
+import com.lunapem.tiendatatuajesmvc.base.Servicio;
 
 import javax.swing.*;
 
@@ -16,15 +16,16 @@ public class Ventana {
     private JTextField textField3;
     private JLabel tamannoMaterialLbl;
     private JLabel estiloTipoJoyaLbl;
-    private JLabel colorTintaJoyaLbl;
+    private JLabel colorTintaLbl;
     private JLabel sesionesCicatrizacionLbl;
     private JButton importarButton;
     private JButton exportarButton;
+    private JSpinner spinner1;
 
     //creados por mi
     public JFrame frame;
     //pintar en un elemento Default(elemento)Model
-    public DefaultListModel<Servicios> dlmServicios;
+    public DefaultListModel<Servicio> dlmServicios;
 
     public Ventana() {
         frame = new JFrame("Servicios");
@@ -36,7 +37,7 @@ public class Ventana {
     }
 
     public void initComponents() {
-        dlmServicios= new DefaultListModel<Servicios>();
+        dlmServicios= new DefaultListModel<Servicio>();
         list1.setModel(dlmServicios);
     }
 
