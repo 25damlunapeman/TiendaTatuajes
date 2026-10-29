@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="47142ecd-5705-4c65-b545-813d5c837644" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/base/Piercings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/base/Piercing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/base/Servicios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/base/Servicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/base/Tatuajes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/base/Tatuaje.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/ServiciosModelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/ServiciosModelo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/Ventana.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/Ventana.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/Ventana.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/Util.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +62,7 @@
       <workItem from="1792652909681" duration="3028000" />
       <workItem from="1793117865609" duration="3080000" />
       <workItem from="1793259510885" duration="168000" />
-      <workItem from="1793259701787" duration="5441000" />
+      <workItem from="1793259701787" duration="5918000" />
     </task>
     <servers />
   </component>
