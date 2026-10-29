@@ -1,5 +1,6 @@
 package com.lunapem.tiendatatuajesmvc.gui;
 
+import com.github.lgooddatepicker.components.DatePicker;
 import com.lunapem.tiendatatuajesmvc.base.Servicio;
 
 import javax.swing.*;
@@ -8,7 +9,7 @@ public class Ventana {
     private JPanel panel1;
     public JRadioButton tatuajesRadioButton;
     public JRadioButton piercingsRadioButton;
-    public JTextField NombreTxt;
+    public JTextField nombreTxt;
     public JButton nuevoButton;
     public JTextField precioTxt;
     public JTextField zonaTxt;
@@ -20,10 +21,11 @@ public class Ventana {
     public JLabel sesionesCicatrizacionLbl;
     public JButton importarButton;
     public JButton exportarButton;
-    public JSpinner spinner1;
-    private JTextField tamannoTxt;
-    private JTextField estiloTipoJoyaTxt;
-    private JTextField colorTintaTxt;
+    public JTextField tamannoMaterialTxt;
+    public JTextField estiloTipoJoyaTxt;
+    public JTextField colorTintaTxt;
+    public DatePicker fechaCitaDPicker;
+    public JTextField sesionesCicatricacionTxt;
 
     //creados por mi
     public JFrame frame;

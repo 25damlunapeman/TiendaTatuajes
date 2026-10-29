@@ -48,7 +48,7 @@ public class ServiciosModelo {
         }
         return false;
     }
-    public void exortarXML(File fichero) throws ParserConfigurationException, TransformerException {
+    public void exportarXML(File fichero) throws ParserConfigurationException, TransformerException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         DOMImplementation dom = builder.getDOMImplementation();
