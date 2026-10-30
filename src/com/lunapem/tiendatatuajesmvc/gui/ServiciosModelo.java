@@ -70,81 +70,69 @@ public class ServiciosModelo {
             }
             raiz.appendChild(nodoServicio);
 
-            nodoDatos = documento.createElement("nombre cliente");
+            nodoDatos = documento.createElement("NombreCliente");
             nodoServicio.appendChild(nodoDatos);
             texto = documento.createTextNode(unServicio.getNombreCliente());
             nodoDatos.appendChild(texto);
 
-            nodoDatos = documento.createElement("telefono cliente");
+            nodoDatos = documento.createElement("TelefonoCliente");
             nodoServicio.appendChild(nodoDatos);
             texto = documento.createTextNode(unServicio.getTelefonoCliente());
             nodoDatos.appendChild(texto);
 
-            nodoDatos = documento.createElement("fecha cita");
+            nodoDatos = documento.createElement("FechaCita");
             nodoServicio.appendChild(nodoDatos);
             texto = documento.createTextNode(String.valueOf(unServicio.getFechaCita()));
             nodoDatos.appendChild(texto);
 
-            nodoDatos = documento.createElement("precio");
+            nodoDatos = documento.createElement("Precio");
             nodoServicio.appendChild(nodoDatos);
             texto = documento.createTextNode(String.valueOf(unServicio.getPrecio()));
             nodoDatos.appendChild(texto);
 
-            nodoDatos = documento.createElement("zona");
+            nodoDatos = documento.createElement("Zona");
             nodoServicio.appendChild(nodoDatos);
             texto = documento.createTextNode(unServicio.getZona());
             nodoDatos.appendChild(texto);
 
             if(unServicio instanceof Piercing){
-                nodoDatos = documento.createElement("material piercing");
+                nodoDatos = documento.createElement("MaterialPiercing");
                 nodoServicio.appendChild(nodoDatos);
                 texto = documento.createTextNode(String.valueOf(((Piercing) unServicio).getMaterial()));
                 nodoDatos.appendChild(texto);
             }else{
-                nodoDatos = documento.createElement("tamaño tatuaje");
+                nodoDatos = documento.createElement("TamañoTatuaje");
                 nodoServicio.appendChild(nodoDatos);
                 texto = documento.createTextNode(String.valueOf(((Tatuaje) unServicio).getTamano()));
                 nodoDatos.appendChild(texto);
             }
 
             if(unServicio instanceof Piercing){
-                nodoDatos = documento.createElement("tipo joya");
+                nodoDatos = documento.createElement("TipoJoya");
                 nodoServicio.appendChild(nodoDatos);
                 texto = documento.createTextNode(String.valueOf(((Piercing) unServicio).getTipoJoya()));
                 nodoDatos.appendChild(texto);
             }else{
-                nodoDatos = documento.createElement("estilo tatuaje");
+                nodoDatos = documento.createElement("EstiloTatuaje");
                 nodoServicio.appendChild(nodoDatos);
                 texto = documento.createTextNode(String.valueOf(((Tatuaje) unServicio).getEstilo()));
                 nodoDatos.appendChild(texto);
             }
 
             if(unServicio instanceof Piercing){
-                nodoDatos = documento.createElement("material joya");
-                nodoServicio.appendChild(nodoDatos);
-                texto = documento.createTextNode(String.valueOf(((Piercing) unServicio).getMaterial()));
-                nodoDatos.appendChild(texto);
-            }else{
-                nodoDatos = documento.createElement("tamaño tatuaje");
-                nodoServicio.appendChild(nodoDatos);
-                texto = documento.createTextNode(String.valueOf(((Tatuaje) unServicio).getTamano()));
-                nodoDatos.appendChild(texto);
-            }
-
-            if(unServicio instanceof Piercing){
-                nodoDatos = documento.createElement("tiempo cicatrizacion");
+                nodoDatos = documento.createElement("TiempoCicatrizacion");
                 nodoServicio.appendChild(nodoDatos);
                 texto = documento.createTextNode(String.valueOf(((Piercing) unServicio).getTiempoCicatrizacion()));
                 nodoDatos.appendChild(texto);
             }else{
-                nodoDatos = documento.createElement("numero sesiones");
+                nodoDatos = documento.createElement("NumeroSesiones");
                 nodoServicio.appendChild(nodoDatos);
                 texto = documento.createTextNode(String.valueOf(((Tatuaje) unServicio).getNumeroSesiones()));
                 nodoDatos.appendChild(texto);
             }
 
             if(unServicio instanceof Tatuaje){
-                nodoDatos = documento.createElement("color tinta cliente");
+                nodoDatos = documento.createElement("ColorTintaCliente");
                 nodoServicio.appendChild(nodoDatos);
                 texto = documento.createTextNode(String.valueOf(((Tatuaje) unServicio).getColorTinta()));
                 nodoDatos.appendChild(texto);
@@ -177,10 +165,10 @@ public class ServiciosModelo {
                 nuevoPiercing.setNombreCliente(nodoServicio.getChildNodes().item(0).getTextContent());
                 nuevoPiercing.setTelefonoCliente(nodoServicio.getChildNodes().item(1).getTextContent());
                 nuevoPiercing.setFechaCita(LocalDate.parse(nodoServicio.getChildNodes().item(2).getTextContent()));
-                nuevoPiercing.setPrecio(Float.parseFloat(nodoServicio.getChildNodes().item(4).getTextContent()));
-                nuevoPiercing.setMaterial(nodoServicio.getChildNodes().item(5).getTextContent());
-                nuevoPiercing.setTipoJoya(nodoServicio.getChildNodes().item(6).getTextContent());
-                nuevoPiercing.setTiempoCicatrizacion(Double.parseDouble(nodoServicio.getChildNodes().item(7).getTextContent()));
+                nuevoPiercing.setPrecio(Float.parseFloat(nodoServicio.getChildNodes().item(3).getTextContent()));
+                nuevoPiercing.setMaterial(nodoServicio.getChildNodes().item(4).getTextContent());
+                nuevoPiercing.setTipoJoya(nodoServicio.getChildNodes().item(5).getTextContent());
+                nuevoPiercing.setTiempoCicatrizacion(Double.parseDouble(nodoServicio.getChildNodes().item(6).getTextContent()));
                 listaServicios.add(nuevoPiercing);
             } else {
                 if (nodoServicio.getTagName().equals("Tatuaje")) {
@@ -188,11 +176,11 @@ public class ServiciosModelo {
                     nuevoTatuaje.setNombreCliente(nodoServicio.getChildNodes().item(0).getTextContent());
                     nuevoTatuaje.setTelefonoCliente(nodoServicio.getChildNodes().item(1).getTextContent());
                     nuevoTatuaje.setFechaCita(LocalDate.parse(nodoServicio.getChildNodes().item(2).getTextContent()));
-                    nuevoTatuaje.setPrecio(Float.parseFloat(nodoServicio.getChildNodes().item(4).getTextContent()));
-                    nuevoTatuaje.setTamano(nodoServicio.getChildNodes().item(5).getTextContent());
-                    nuevoTatuaje.setColorTinta(nodoServicio.getChildNodes().item(6).getTextContent());
-                    nuevoTatuaje.setEstilo(nodoServicio.getChildNodes().item(7).getTextContent());
-                    nuevoTatuaje.setNumeroSesiones(Integer.parseInt(nodoServicio.getChildNodes().item(8).getTextContent()));
+                    nuevoTatuaje.setPrecio(Float.parseFloat(nodoServicio.getChildNodes().item(3).getTextContent()));
+                    nuevoTatuaje.setTamano(nodoServicio.getChildNodes().item(4).getTextContent());
+                    nuevoTatuaje.setColorTinta(nodoServicio.getChildNodes().item(5).getTextContent());
+                    nuevoTatuaje.setEstilo(nodoServicio.getChildNodes().item(6).getTextContent());
+                    nuevoTatuaje.setNumeroSesiones(Integer.parseInt(nodoServicio.getChildNodes().item(7).getTextContent()));
                     listaServicios.add(nuevoTatuaje);
                 }
             }

@@ -29,11 +29,11 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
         this.ventana = ventana;
         this.modelo = modelo;
 
-        try {
+       /* try {
             cargarDatosConfiguracion();
         } catch (IOException e) {
             System.out.println("No se encontro el archivo "+ e.getMessage());
-        }
+        }*/
 
         addActionListener(this);
         addListSelectionListener(this);
@@ -92,7 +92,7 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
 
     }
 
-    private void cargarDatosConfiguracion() throws IOException {
+    /*private void cargarDatosConfiguracion() throws IOException {
         Properties configuracion = new Properties();
         configuracion.load(new FileReader("servicios.conf"));
         ultimaRutaExportada = new File(configuracion.getProperty("ultimaRutaExportada"));
@@ -104,11 +104,12 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
         Properties configuracion = new Properties();
         configuracion.setProperty("ultimaRutaExportada", ultimaRutaExportada.getAbsolutePath());
         configuracion.store(new PrintWriter("servicios.conf"), "Datos configuracion servicios");
-    }
+    }*/
 
     @Override
     public void actionPerformed(ActionEvent e) {
         String actionCommand = e.getActionCommand();
+
         switch (actionCommand) {
             case "Nuevo":
                 if (hayCamposVacios()) {
@@ -155,7 +156,7 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
                 if (opt2 == JFileChooser.APPROVE_OPTION) {
                     try {
                         modelo.exportarXML(selectorFichero2.getSelectedFile());
-                        actualizarDatosConfiguracion(selectorFichero2.getSelectedFile());
+                        //actualizarDatosConfiguracion(selectorFichero2.getSelectedFile());
                     } catch (ParserConfigurationException ex) {
                         ex.printStackTrace();
                     } catch (TransformerException ex) {
@@ -163,14 +164,14 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
                     }
                 }
                 break;
-            case "Piercing":
+            case "Piercings":
                 ventana.tamannoMaterialLbl.setText("Material");
                 ventana.estiloTipoJoyaLbl.setText("Tipo Joya");
                 ventana.sesionesCicatrizacionLbl.setText("Tiempo de cicatrizacion");
                 ventana.colorTintaLbl.setVisible(false);
-                ventana.colorTintaTxt.setVisible(true);
+                ventana.colorTintaTxt.setVisible(false);
                 break;
-            case "Tatuaje":
+            case "Tatuajes":
                 ventana.tamannoMaterialLbl.setText("Tamaño");
                 ventana.estiloTipoJoyaLbl.setText("Estilo");
                 ventana.sesionesCicatrizacionLbl.setText("Sesiones");
@@ -185,11 +186,11 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
     public void windowClosing(WindowEvent e) {
         int resp = Util.mensajeConfirmacion("Deseas cerrar la ventana", "Salir");
         if (resp == JOptionPane.OK_OPTION) {
-            try {
+            /*try {
                 guardarDatosConfiguracion();
             } catch (IOException ex) {
                 ex.printStackTrace();
-            }
+            }*/
             System.exit(0);
         }
     }
