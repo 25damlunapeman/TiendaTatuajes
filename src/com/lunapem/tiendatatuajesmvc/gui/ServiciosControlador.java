@@ -29,11 +29,11 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
         this.ventana = ventana;
         this.modelo = modelo;
 
-       /* try {
+        try {
             cargarDatosConfiguracion();
         } catch (IOException e) {
             System.out.println("No se encontro el archivo "+ e.getMessage());
-        }*/
+        }
 
         addActionListener(this);
         addListSelectionListener(this);
@@ -92,7 +92,7 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
 
     }
 
-    /*private void cargarDatosConfiguracion() throws IOException {
+    private void cargarDatosConfiguracion() throws IOException {
         Properties configuracion = new Properties();
         configuracion.load(new FileReader("servicios.conf"));
         ultimaRutaExportada = new File(configuracion.getProperty("ultimaRutaExportada"));
@@ -104,7 +104,7 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
         Properties configuracion = new Properties();
         configuracion.setProperty("ultimaRutaExportada", ultimaRutaExportada.getAbsolutePath());
         configuracion.store(new PrintWriter("servicios.conf"), "Datos configuracion servicios");
-    }*/
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -156,7 +156,7 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
                 if (opt2 == JFileChooser.APPROVE_OPTION) {
                     try {
                         modelo.exportarXML(selectorFichero2.getSelectedFile());
-                        //actualizarDatosConfiguracion(selectorFichero2.getSelectedFile());
+                        actualizarDatosConfiguracion(selectorFichero2.getSelectedFile());
                     } catch (ParserConfigurationException ex) {
                         ex.printStackTrace();
                     } catch (TransformerException ex) {
@@ -186,11 +186,11 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
     public void windowClosing(WindowEvent e) {
         int resp = Util.mensajeConfirmacion("Deseas cerrar la ventana", "Salir");
         if (resp == JOptionPane.OK_OPTION) {
-            /*try {
+            try {
                 guardarDatosConfiguracion();
             } catch (IOException ex) {
                 ex.printStackTrace();
-            }*/
+            }
             System.exit(0);
         }
     }
@@ -204,8 +204,6 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
             ventana.fechaCitaDPicker.setDate(servicioSeleccionado.getFechaCita());
             ventana.precioTxt.setText(String.valueOf(servicioSeleccionado.getPrecio()));
             ventana.zonaTxt.setText(servicioSeleccionado.getZona());
-
-
 
 
             if (servicioSeleccionado instanceof Piercing) {
