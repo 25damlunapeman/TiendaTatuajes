@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47142ecd-5705-4c65-b545-813d5c837644" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/servicios.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/base/Piercing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/base/Piercing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/base/Tatuaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/base/Tatuaje.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/ServiciosControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/ServiciosControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/ServiciosModelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/ServiciosModelo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/Ventana.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/Ventana.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/Ventana.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +95,8 @@
       <workItem from="1793259510885" duration="168000" />
       <workItem from="1793259701787" duration="7289000" />
       <workItem from="1793291630764" duration="2546000" />
-      <workItem from="1793372937975" duration="1862000" />
+      <workItem from="1793372937975" duration="1936000" />
+      <workItem from="1793441113705" duration="1447000" />
     </task>
     <servers />
   </component>

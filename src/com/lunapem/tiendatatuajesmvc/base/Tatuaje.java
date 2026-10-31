@@ -6,16 +6,19 @@ public class Tatuaje extends Servicio {
     private String tamano;
     private String colorTinta;
     private String estilo;
+    private String descripcion;
     private int numeroSesiones;
 
-    public Tatuaje(){
+    public Tatuaje() {
         super();
     }
-    public Tatuaje(String nombreCliente, String telefonoCliente, LocalDate fechaCita, float precio, String zona, String tamano, String colorTinta, String estilo, int numeroSesiones) {
+
+    public Tatuaje(String nombreCliente, String telefonoCliente, LocalDate fechaCita, float precio, String zona, String tamano, String colorTinta, String estilo, String descripcion, int numeroSesiones) {
         super(nombreCliente, telefonoCliente, fechaCita, precio, zona);
         this.tamano = tamano;
         this.colorTinta = colorTinta;
         this.estilo = estilo;
+        this.descripcion = descripcion;
         this.numeroSesiones = numeroSesiones;
     }
 
@@ -41,6 +44,14 @@ public class Tatuaje extends Servicio {
 
     public void setEstilo(String estilo) {
         this.estilo = estilo;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public int getNumeroSesiones() {

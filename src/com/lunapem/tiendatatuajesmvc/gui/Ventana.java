@@ -26,6 +26,8 @@ public class Ventana {
     public JTextField colorTintaTxt;
     public DatePicker fechaCitaDPicker;
     public JTextField sesionesCicatricacionTxt;
+    public JTextArea descripcionAlergiasTxt;
+    public JLabel descripcionAlergiasLbl;
 
     //creados por mi
     public JFrame frame;
