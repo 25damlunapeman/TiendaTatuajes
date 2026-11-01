@@ -4,6 +4,7 @@ import com.github.lgooddatepicker.components.DatePicker;
 import com.lunapem.tiendatatuajesmvc.base.Servicio;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Ventana {
     private JPanel panel1;
@@ -28,6 +29,9 @@ public class Ventana {
     public JTextField sesionesCicatricacionTxt;
     public JTextArea descripcionAlergiasTxt;
     public JLabel descripcionAlergiasLbl;
+    public JButton editarButton;
+    public JButton eliminarButton;
+    public JButton buscarButton;
 
     //creados por mi
     public JFrame frame;
@@ -35,10 +39,12 @@ public class Ventana {
     public DefaultListModel<Servicio> dlmServicios;
 
     public Ventana() {
-        frame = new JFrame("Servicios");
+        frame = new JFrame("Estudio de Tatuajes y Piercings");
         frame.setContentPane(panel1);
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         frame.pack();
+        frame.setSize(1000, 700);
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         initComponents();
     }

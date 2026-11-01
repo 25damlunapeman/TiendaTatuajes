@@ -48,6 +48,24 @@ public class ServiciosModelo {
         }
         return false;
     }
+
+    public void eliminarServicio(Servicio servicioEliminar){
+        listaServicios.remove(servicioEliminar);
+    }
+
+    public Servicio buscarServicio(String cliente){
+        for (Servicio unServicio: listaServicios) {
+            if(unServicio.getNombreCliente().equalsIgnoreCase(cliente)){
+                return unServicio;
+            }
+        }
+        return null;
+    }
+
+    public void editarServicio(int posicionServicioModificar, Servicio modificar){
+        listaServicios.set(posicionServicioModificar, modificar);
+    }
+
     public void exportarXML(File fichero) throws ParserConfigurationException, TransformerException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
@@ -202,4 +220,5 @@ public class ServiciosModelo {
         }
 
     }
+
 }
