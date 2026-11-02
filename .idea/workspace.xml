@@ -3,14 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="47142ecd-5705-4c65-b545-813d5c837644" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TiendaTatuajesMVC/com/lunapem/tiendatatuajesmvc/base/Piercing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TiendaTatuajesMVC/com/lunapem/tiendatatuajesmvc/base/Piercing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TiendaTatuajesMVC/com/lunapem/tiendatatuajesmvc/base/Tatuaje.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TiendaTatuajesMVC/com/lunapem/tiendatatuajesmvc/base/Tatuaje.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TiendaTatuajesMVC/com/lunapem/tiendatatuajesmvc/gui/ServiciosControlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TiendaTatuajesMVC/com/lunapem/tiendatatuajesmvc/gui/ServiciosControlador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TiendaTatuajesMVC/com/lunapem/tiendatatuajesmvc/gui/ServiciosModelo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TiendaTatuajesMVC/com/lunapem/tiendatatuajesmvc/gui/ServiciosModelo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TiendaTatuajesMVC/com/lunapem/tiendatatuajesmvc/gui/Ventana.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TiendaTatuajesMVC/com/lunapem/tiendatatuajesmvc/gui/Ventana.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servicios.conf" beforeDir="false" afterPath="$PROJECT_DIR$/servicios.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/ServiciosControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/ServiciosControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/ServiciosModelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/ServiciosModelo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/Ventana.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/Ventana.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/Ventana.java" afterDir="false" />
     </list>
@@ -101,7 +97,10 @@
       <workItem from="1793291630764" duration="2546000" />
       <workItem from="1793372937975" duration="1936000" />
       <workItem from="1793441113705" duration="2254000" />
-      <workItem from="1793544198188" duration="4792000" />
+      <workItem from="1793544198188" duration="5417000" />
+      <workItem from="1793549706164" duration="591000" />
+      <workItem from="1793551327431" duration="569000" />
+      <workItem from="1793628919703" duration="2596000" />
     </task>
     <servers />
   </component>

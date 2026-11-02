@@ -22,16 +22,17 @@ public class Ventana {
     public JLabel sesionesCicatrizacionLbl;
     public JButton importarButton;
     public JButton exportarButton;
-    public JTextField tamannoMaterialTxt;
+    public JComboBox tamannoMaterialCmb;
     public JTextField estiloTipoJoyaTxt;
     public JTextField colorTintaTxt;
     public DatePicker fechaCitaDPicker;
-    public JTextField sesionesCicatricacionTxt;
+    public JSpinner sesionesCicatricacionSpn;
     public JTextArea descripcionAlergiasTxt;
     public JLabel descripcionAlergiasLbl;
     public JButton editarButton;
     public JButton eliminarButton;
     public JButton buscarButton;
+    public JTextField semanasTextField;
 
     //creados por mi
     public JFrame frame;
@@ -43,7 +44,7 @@ public class Ventana {
         frame.setContentPane(panel1);
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         frame.pack();
-        frame.setSize(1000, 700);
+        frame.setSize(500, 600);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         initComponents();
