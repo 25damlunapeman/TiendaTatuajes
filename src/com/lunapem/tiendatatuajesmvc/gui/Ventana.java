@@ -54,7 +54,7 @@ public class Ventana {
 
     public Ventana() {
         //margenes
-        panel1.setBorder(new EmptyBorder(16, 16, 16, 16));
+        panel1.setBorder(new EmptyBorder(16, 24, 16, 16));
         //ventana
         frame = new JFrame("Estudio de Tatuajes y Piercings");
         frame.setContentPane(panel1);
@@ -63,7 +63,7 @@ public class Ventana {
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         frame.pack();
         //tamaño ventana
-        frame.setSize(700, 800);
+        frame.setSize(650, 750);
         //centrar ventana
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
@@ -79,8 +79,11 @@ public class Ventana {
     public void crearMenu(){
         JMenuBar barra = new JMenuBar();
         JMenu menu = new JMenu("Archivo");
+        menu.setFont(new Font("Courier New",Font.BOLD,16));
         itemExportar = new JMenuItem("Exportar XML");
         itemImportar = new JMenuItem("Importar XML");
+        itemExportar.setFont(new Font("Courier New",Font.BOLD,16));
+        itemImportar.setFont(new Font("Courier New",Font.BOLD,16));
 
         menu.add(itemExportar);
         menu.add(itemImportar);
