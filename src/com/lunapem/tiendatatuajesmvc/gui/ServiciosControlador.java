@@ -209,7 +209,7 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
             case "Editar":
                 int posicionServicioModificar = ventana.list1.getSelectedIndex();
 
-                if (posicionServicioModificar > 0) {
+                if (posicionServicioModificar < 0) {
                     Util.mensajeError("Selecciona un servicio");
                     break;
                 }

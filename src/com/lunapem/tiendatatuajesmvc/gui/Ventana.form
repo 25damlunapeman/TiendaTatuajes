@@ -360,8 +360,8 @@
           <forms/>
         </constraints>
         <properties>
-          <background color="-9492434"/>
-          <foreground color="-1"/>
+          <background color="-1"/>
+          <foreground color="-16777216"/>
         </properties>
       </component>
       <component id="2f01c" class="javax.swing.JSpinner" binding="sesionesCicatricacionSpn">
@@ -382,9 +382,9 @@
           <forms defaultalign-horz="false"/>
         </constraints>
         <properties>
-          <background color="-9492434"/>
+          <background color="-1"/>
           <enabled value="true"/>
-          <foreground color="-1"/>
+          <foreground color="-16777216"/>
           <text value="Semanas"/>
         </properties>
       </component>
