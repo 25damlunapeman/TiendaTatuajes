@@ -7,14 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47142ecd-5705-4c65-b545-813d5c837644" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/TiendaTatuajesMVC_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/TiendaTatuajesMVC_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/TiendaTatuajesMVC_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TiendaTatuajesMVC/com/lunapem/tiendatatuajesmvc/gui/Ventana.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TiendaTatuajesMVC/com/lunapem/tiendatatuajesmvc/gui/Ventana.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TiendaTatuajesMVC_jar/TiendaTatuajesMVC.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TiendaTatuajesMVC_jar/TiendaTatuajesMVC.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TiendaTatuajesMVC/com/lunapem/tiendatatuajesmvc/gui/ServiciosControlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TiendaTatuajesMVC/com/lunapem/tiendatatuajesmvc/gui/ServiciosControlador.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servicios.conf" beforeDir="false" afterPath="$PROJECT_DIR$/servicios.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/ServiciosControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/ServiciosControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/Ventana.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/Ventana.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
