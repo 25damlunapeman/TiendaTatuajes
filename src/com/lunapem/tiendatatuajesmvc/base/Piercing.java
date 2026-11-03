@@ -5,18 +5,18 @@ import java.time.LocalDate;
 public class Piercing extends Servicio {
     private String material;
     private String tipoJoya;
-    private String alergias;
+    private String observaciones;
     private double tiempoCicatrizacion;
 
-    public Piercing(){
+    public Piercing() {
         super();
     }
 
-    public Piercing(String nombreCliente, String telefonoCliente, LocalDate fechaCita, float precio, String zona, String material, String tipoJoya,String alergias, double tiempoCicatrizacion) {
+    public Piercing(String nombreCliente, String telefonoCliente, LocalDate fechaCita, float precio, String zona, String material, String tipoJoya, String observaciones, double tiempoCicatrizacion) {
         super(nombreCliente, telefonoCliente, fechaCita, precio, zona);
         this.material = material;
         this.tipoJoya = tipoJoya;
-        this.alergias = alergias;
+        this.observaciones = observaciones;
         this.tiempoCicatrizacion = tiempoCicatrizacion;
     }
 
@@ -36,12 +36,12 @@ public class Piercing extends Servicio {
         this.tipoJoya = tipoJoya;
     }
 
-    public String getAlergias() {
-        return alergias;
+    public String getObservaciones() {
+        return observaciones;
     }
 
-    public void setAlergias(String alergias) {
-        this.alergias = alergias;
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
     }
 
     public double getTiempoCicatrizacion() {

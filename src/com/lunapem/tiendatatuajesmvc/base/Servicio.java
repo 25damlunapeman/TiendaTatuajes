@@ -9,7 +9,7 @@ public abstract class Servicio {
     private float precio;
     private String zona;
 
-    public Servicio(){
+    public Servicio() {
 
     }
 

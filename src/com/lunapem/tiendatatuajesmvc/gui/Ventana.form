@@ -26,11 +26,7 @@
     <rowspec value="center:7dlu:noGrow"/>
     <rowspec value="top:7dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
-    <rowspec value="top:4dlu:noGrow"/>
-    <rowspec value="center:max(d;4px):noGrow"/>
-    <rowspec value="top:4dlu:noGrow"/>
-    <rowspec value="center:max(d;4px):noGrow"/>
-    <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="top:5dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
@@ -191,24 +187,6 @@
           <text value="Número sesiones"/>
         </properties>
       </component>
-      <component id="3f12" class="javax.swing.JButton" binding="importarButton" default-binding="true">
-        <constraints>
-          <grid row="26" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-          <forms/>
-        </constraints>
-        <properties>
-          <text value="Importar"/>
-        </properties>
-      </component>
-      <component id="6133f" class="javax.swing.JButton" binding="exportarButton" default-binding="true">
-        <constraints>
-          <grid row="28" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-          <forms/>
-        </constraints>
-        <properties>
-          <text value="Exportar"/>
-        </properties>
-      </component>
       <component id="7bdc9" class="javax.swing.JLabel" binding="colorTintaLbl">
         <constraints>
           <grid row="20" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
@@ -236,7 +214,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="2bba1" class="javax.swing.JLabel" binding="descripcionAlergiasLbl">
+      <component id="2bba1" class="javax.swing.JLabel" binding="descripcionObservacionesLbl">
         <constraints>
           <grid row="16" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
@@ -247,7 +225,7 @@
       </component>
       <component id="ac696" class="javax.swing.JButton" binding="editarButton" default-binding="true">
         <constraints>
-          <grid row="30" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="26" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
@@ -256,7 +234,7 @@
       </component>
       <component id="71cfa" class="javax.swing.JButton" binding="eliminarButton" default-binding="true">
         <constraints>
-          <grid row="32" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="28" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
@@ -265,7 +243,7 @@
       </component>
       <component id="b0482" class="javax.swing.JButton" binding="buscarButton" default-binding="true">
         <constraints>
-          <grid row="34" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="30" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
@@ -274,7 +252,7 @@
       </component>
       <scrollpane id="bd21b">
         <constraints>
-          <grid row="24" column="2" row-span="9" col-span="3" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="24" column="2" row-span="5" col-span="3" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <forms defaultalign-vert="false"/>
         </constraints>
         <properties>
@@ -298,7 +276,7 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="b0145" class="javax.swing.JTextArea" binding="descripcionAlergiasTxt">
+          <component id="b0145" class="javax.swing.JTextArea" binding="descripcionObservacionesTxt">
             <constraints/>
             <properties>
               <lineWrap value="true"/>
@@ -351,7 +329,7 @@
       </component>
       <component id="5a4ca" class="javax.swing.JTextField" binding="buscarTxt">
         <constraints>
-          <grid row="34" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="30" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
           <forms defaultalign-horz="false"/>

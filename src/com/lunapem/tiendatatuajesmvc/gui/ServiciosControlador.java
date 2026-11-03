@@ -32,7 +32,7 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
         try {
             cargarDatosConfiguracion();
         } catch (IOException e) {
-            System.out.println("No se encontro el archivo "+ e.getMessage());
+            System.out.println("No se encontro el archivo " + e.getMessage());
         }
 
         addActionListener(this);
@@ -40,9 +40,10 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
         addWindowsListener(this);
 
     }
+
     private String hayCamposVacios() {
         String campos = "";
-        if (ventana.nombreTxt.getText().isEmpty()){
+        if (ventana.nombreTxt.getText().isEmpty()) {
             campos += "- Nombre\n";
         }
         if (ventana.telefonoClienteTxt.getText().isEmpty()) {
@@ -58,28 +59,31 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
             campos += "- Zona\n";
         }
         if (ventana.piercingsRadioButton.isSelected()) {
-            if(ventana.tamannoMaterialCmb.getSelectedIndex()<=-1){
+            if (ventana.tamannoMaterialCmb.getSelectedIndex() <= 0) {
                 campos += "- Material\n";
             }
             if (ventana.estiloTipoJoyaTxt.getText().isEmpty()) {
                 campos += "- Tipo joya\n";
             }
-            if (ventana.descripcionAlergiasTxt.getText().isEmpty()) {
-                campos += "- Alergias\n";
+            if (ventana.descripcionObservacionesTxt.getText().isEmpty()) {
+                campos += "- Observaciones\n";
             }
-            //if(ventana.sesionesCicatricacionSpn.getValue()){
-
-            //}
+            if ((Double) ventana.sesionesCicatricacionSpn.getValue() <= 0) {
+                campos += "- Tiempo cicatrizacion\n";
+            }
         }
         if (ventana.tatuajesRadioButton.isSelected()) {
-            if(ventana.tamannoMaterialCmb.getSelectedIndex()<=-1){
+            if (ventana.tamannoMaterialCmb.getSelectedIndex() <= 0) {
                 campos += "- Tamaño\n";
             }
             if (ventana.estiloTipoJoyaTxt.getText().isEmpty()) {
                 campos += "- Estilo\n";
             }
-            if (ventana.descripcionAlergiasTxt.getText().isEmpty()) {
+            if (ventana.descripcionObservacionesTxt.getText().isEmpty()) {
                 campos += "- Descripción\n";
+            }
+            if ((Integer) ventana.sesionesCicatricacionSpn.getValue() <= 0) {
+                campos += "- Numero sesiones\n";
             }
             if (ventana.colorTintaTxt.getText().isEmpty()) {
                 campos += "- Color tinta\n";
@@ -88,7 +92,7 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
         return campos;
     }
 
-    private void limpiarCampos(){
+    private void limpiarCampos() {
         ventana.nombreTxt.setText(null);
         ventana.telefonoClienteTxt.setText(null);
         ventana.precioTxt.setText(null);
@@ -97,14 +101,14 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
         ventana.tamannoMaterialCmb.setSelectedItem(null);
         ventana.colorTintaTxt.setText(null);
         ventana.estiloTipoJoyaTxt.setText(null);
-        ventana.descripcionAlergiasTxt.setText(null);
+        ventana.descripcionObservacionesTxt.setText(null);
         ventana.sesionesCicatricacionSpn.setValue(0);
         ventana.nombreTxt.requestFocus();
     }
 
-    public void refrescar(){
+    public void refrescar() {
         ventana.dlmServicios.clear();
-        for(Servicio unServicio: modelo.obtenerServicios()){
+        for (Servicio unServicio : modelo.obtenerServicios()) {
             ventana.dlmServicios.addElement(unServicio);
         }
     }
@@ -119,8 +123,8 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
 
     private void addActionListener(ActionListener listener) {
         ventana.nuevoButton.addActionListener(listener);
-        ventana.importarButton.addActionListener(listener);
-        ventana.exportarButton.addActionListener(listener);
+        ventana.itemImportar.addActionListener(listener);
+        ventana.itemExportar.addActionListener(listener);
         ventana.editarButton.addActionListener(listener);
         ventana.eliminarButton.addActionListener(listener);
         ventana.buscarButton.addActionListener(listener);
@@ -133,9 +137,11 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
         configuracion.load(new FileReader("servicios.conf"));
         ultimaRutaExportada = new File(configuracion.getProperty("ultimaRutaExportada"));
     }
+
     private void actualizarDatosConfiguracion(File ultimaRutaExportada) {
         this.ultimaRutaExportada = ultimaRutaExportada;
     }
+
     private void guardarDatosConfiguracion() throws IOException {
         Properties configuracion = new Properties();
         configuracion.setProperty("ultimaRutaExportada", ultimaRutaExportada.getAbsolutePath());
@@ -159,18 +165,18 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
                 if (ventana.piercingsRadioButton.isSelected()) {
                     modelo.altaPiercings(ventana.nombreTxt.getText(), ventana.telefonoClienteTxt.getText(), ventana.fechaCitaDPicker.getDate(),
                             Float.parseFloat(ventana.precioTxt.getText()), ventana.zonaTxt.getText(), ventana.tamannoMaterialCmb.getSelectedItem().toString(),
-                            ventana.estiloTipoJoyaTxt.getText(),ventana.descripcionAlergiasTxt.getText(),
+                            ventana.estiloTipoJoyaTxt.getText(), ventana.descripcionObservacionesTxt.getText(),
                             (Double) ventana.sesionesCicatricacionSpn.getValue());
                 } else {
                     modelo.altaTatuaje(ventana.nombreTxt.getText(), ventana.telefonoClienteTxt.getText(), ventana.fechaCitaDPicker.getDate(),
                             Float.parseFloat(ventana.precioTxt.getText()), ventana.zonaTxt.getText(), ventana.tamannoMaterialCmb.getSelectedItem().toString(),
-                            ventana.colorTintaTxt.getText(), ventana.estiloTipoJoyaTxt.getText(),ventana.descripcionAlergiasTxt.getText(),
+                            ventana.colorTintaTxt.getText(), ventana.estiloTipoJoyaTxt.getText(), ventana.descripcionObservacionesTxt.getText(),
                             (Integer) ventana.sesionesCicatricacionSpn.getValue());
                 }
                 limpiarCampos();
                 refrescar();
                 break;
-            case "Importar":
+            case "Importar XML":
                 JFileChooser selectorFichero = Util.crearSelectorFichero(ultimaRutaExportada, "Archivos XML", "xml");
                 int opt = selectorFichero.showOpenDialog(null);
                 if (opt == JFileChooser.APPROVE_OPTION) {
@@ -186,7 +192,7 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
                     refrescar();
                 }
                 break;
-            case "Exportar":
+            case "Exportar XML":
                 JFileChooser selectorFichero2 = Util.crearSelectorFichero(ultimaRutaExportada, "Archivos XML", "xml");
                 int opt2 = selectorFichero2.showSaveDialog(null);
                 if (opt2 == JFileChooser.APPROVE_OPTION) {
@@ -203,23 +209,23 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
             case "Editar":
                 int posicionServicioModificar = ventana.list1.getSelectedIndex();
 
-                if(posicionServicioModificar > 0){
+                if (posicionServicioModificar > 0) {
                     Util.mensajeError("Selecciona un servicio");
                     break;
                 }
                 Servicio modificar;
-                if(ventana.piercingsRadioButton.isSelected()){
+                if (ventana.piercingsRadioButton.isSelected()) {
                     modificar = new Piercing(ventana.nombreTxt.getText(), ventana.telefonoClienteTxt.getText(),
                             ventana.fechaCitaDPicker.getDate(), Float.parseFloat(ventana.precioTxt.getText()),
                             ventana.zonaTxt.getText(), ventana.tamannoMaterialCmb.getSelectedItem().toString(),
-                            ventana.estiloTipoJoyaTxt.getText(), ventana.descripcionAlergiasTxt.getText(),
+                            ventana.estiloTipoJoyaTxt.getText(), ventana.descripcionObservacionesTxt.getText(),
                             (Double) ventana.sesionesCicatricacionSpn.getValue());
-                }else{
+                } else {
                     modificar = new Tatuaje(ventana.nombreTxt.getText(), ventana.telefonoClienteTxt.getText(),
                             ventana.fechaCitaDPicker.getDate(), Float.parseFloat(ventana.precioTxt.getText()),
                             ventana.zonaTxt.getText(), ventana.tamannoMaterialCmb.getSelectedItem().toString(),
                             ventana.colorTintaTxt.getText(), ventana.estiloTipoJoyaTxt.getText(),
-                            ventana.descripcionAlergiasTxt.getText(), (Integer) ventana.sesionesCicatricacionSpn.getValue());
+                            ventana.descripcionObservacionesTxt.getText(), (Integer) ventana.sesionesCicatricacionSpn.getValue());
                 }
                 modelo.editarServicio(posicionServicioModificar, modificar);
                 refrescar();
@@ -227,7 +233,7 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
             case "Eliminar":
                 Servicio servicioEliminar = (Servicio) ventana.list1.getSelectedValue();
 
-                if(servicioEliminar == null){
+                if (servicioEliminar == null) {
                     Util.mensajeError("Elige un servicio");
                     break;
                 }
@@ -238,14 +244,14 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
             case "Buscar":
                 String nombreClienteBuscar = ventana.buscarTxt.getText();
                 boolean encontrado = false;
-                for (Servicio unServicio: modelo.obtenerServicios()){
-                    if(unServicio.getNombreCliente().equalsIgnoreCase(nombreClienteBuscar)){
-                        ventana.list1.setSelectedValue(unServicio,true);
+                for (Servicio unServicio : modelo.obtenerServicios()) {
+                    if (unServicio.getNombreCliente().equalsIgnoreCase(nombreClienteBuscar)) {
+                        ventana.list1.setSelectedValue(unServicio, true);
                         encontrado = true;
                         break;
                     }
                 }
-                if(!encontrado){
+                if (!encontrado) {
                     Util.mensajeError("Cliente no encontrado");
                     break;
                 }
@@ -253,33 +259,40 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
             case "Piercings":
                 ventana.tamannoMaterialLbl.setText("Material");
                 ventana.estiloTipoJoyaLbl.setText("Tipo Joya");
-                ventana.descripcionAlergiasLbl.setText("Alergias");
+                ventana.descripcionObservacionesLbl.setText("Observaciones");
                 ventana.sesionesCicatrizacionLbl.setText("Tiempo cicatrizacion");
                 ventana.colorTintaLbl.setVisible(false);
                 ventana.colorTintaTxt.setVisible(false);
                 ventana.semanasTextField.setVisible(true);
-                ventana.tamannoMaterialCmb.setModel(
-                        new DefaultComboBoxModel<>(
-                                new String[]{"Titanio", "Acero Quirúrgico", "Oro", "Plata"
-                                }
-                        )
-                );
-                ventana.sesionesCicatricacionSpn.setModel(new SpinnerNumberModel());
+                //borrar los item del comboBox(piercings)
+                ventana.tamannoMaterialCmb.removeAllItems();
+                //introducir un espacio para q se use como inicial y cuente como vacio
+                ventana.tamannoMaterialCmb.addItem("");
+                //introducir los items
+                ventana.tamannoMaterialCmb.addItem("Titanio");
+                ventana.tamannoMaterialCmb.addItem("Acero Quirúrgico");
+                ventana.tamannoMaterialCmb.addItem("Oro");
+                ventana.tamannoMaterialCmb.addItem("Plata");
+                //introducir valor inicial, minimo, maximo y aumento (en el caso de ser doble)
+                ventana.sesionesCicatricacionSpn.setModel(new SpinnerNumberModel(0.0, 0.0, 100.0, 0.5));
                 break;
             case "Tatuajes":
                 ventana.tamannoMaterialLbl.setText("Tamaño");
                 ventana.estiloTipoJoyaLbl.setText("Estilo");
-                ventana.descripcionAlergiasLbl.setText("Descripcion tatuaje");
+                ventana.descripcionObservacionesLbl.setText("Descripcion tatuaje");
                 ventana.sesionesCicatrizacionLbl.setText("Sesiones");
                 ventana.semanasTextField.setVisible(false);
                 ventana.colorTintaLbl.setVisible(true);
                 ventana.colorTintaTxt.setVisible(true);
-                ventana.tamannoMaterialCmb.setModel(
-                        new DefaultComboBoxModel<>(
-                                new String[]{"Pequeño", "Mediano", "Grande"
-                                }
-                        )
-                );
+                //borrar los item del comboBox(piercings)
+                ventana.tamannoMaterialCmb.removeAllItems();
+                //introducir un espacio para q se use como inicial y cuente como vacio
+                ventana.tamannoMaterialCmb.addItem("");
+                //introducir los items
+                ventana.tamannoMaterialCmb.addItem("Pequeño");
+                ventana.tamannoMaterialCmb.addItem("Mediano");
+                ventana.tamannoMaterialCmb.addItem("Grande");
+                //al ser un entero no se necesita especificar los valores del spinner
                 ventana.sesionesCicatricacionSpn.setModel(new SpinnerNumberModel());
                 break;
         }
@@ -313,15 +326,15 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
                 ventana.piercingsRadioButton.doClick();
                 ventana.tamannoMaterialCmb.setSelectedItem(((Piercing) servicioSeleccionado).getMaterial());
                 ventana.estiloTipoJoyaTxt.setText(((Piercing) servicioSeleccionado).getTipoJoya());
-                ventana.descripcionAlergiasTxt.setText(((Piercing) servicioSeleccionado).getAlergias());
-                ventana.sesionesCicatricacionSpn.setValue(String.valueOf(((Piercing) servicioSeleccionado).getTiempoCicatrizacion()));
+                ventana.descripcionObservacionesTxt.setText(((Piercing) servicioSeleccionado).getObservaciones());
+                ventana.sesionesCicatricacionSpn.setValue(((Piercing) servicioSeleccionado).getTiempoCicatrizacion());
                 ventana.colorTintaTxt.setVisible(false);
             } else {
                 ventana.tatuajesRadioButton.doClick();
                 ventana.tamannoMaterialCmb.setSelectedItem(((Tatuaje) servicioSeleccionado).getTamano());
                 ventana.estiloTipoJoyaTxt.setText(((Tatuaje) servicioSeleccionado).getEstilo());
-                ventana.descripcionAlergiasTxt.setText(((Tatuaje) servicioSeleccionado).getDescripcion());
-                ventana.sesionesCicatricacionSpn.setValue(String.valueOf(((Tatuaje) servicioSeleccionado).getNumeroSesiones()));
+                ventana.descripcionObservacionesTxt.setText(((Tatuaje) servicioSeleccionado).getDescripcion());
+                ventana.sesionesCicatricacionSpn.setValue(((Tatuaje) servicioSeleccionado).getNumeroSesiones());
                 ventana.colorTintaTxt.setVisible(true);
                 ventana.colorTintaTxt.setText(((Tatuaje) servicioSeleccionado).getColorTinta());
             }
@@ -330,12 +343,12 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
     }
 
 
-
     //no se usan
     @Override
     public void windowOpened(WindowEvent e) {
 
     }
+
     @Override
     public void windowIconified(WindowEvent e) {
 

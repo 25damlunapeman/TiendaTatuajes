@@ -31,20 +31,20 @@ public class Ventana {
     public JLabel estiloTipoJoyaLbl;
     public JLabel colorTintaLbl;
     public JLabel sesionesCicatrizacionLbl;
-    public JButton importarButton;
-    public JButton exportarButton;
     public JComboBox tamannoMaterialCmb;
     public JTextField estiloTipoJoyaTxt;
     public JTextField colorTintaTxt;
     public DatePicker fechaCitaDPicker;
     public JSpinner sesionesCicatricacionSpn;
-    public JTextArea descripcionAlergiasTxt;
-    public JLabel descripcionAlergiasLbl;
+    public JTextArea descripcionObservacionesTxt;
+    public JLabel descripcionObservacionesLbl;
     public JButton editarButton;
     public JButton eliminarButton;
     public JButton buscarButton;
     public JTextField semanasTextField;
     public JTextField buscarTxt;
+    public JMenuItem itemImportar;
+    public JMenuItem itemExportar;
 
     //creados por mi
     public JFrame frame;
@@ -58,11 +58,13 @@ public class Ventana {
         //ventana
         frame = new JFrame("Estudio de Tatuajes y Piercings");
         frame.setContentPane(panel1);
+        //introducimos menu
+        crearMenu();
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         frame.pack();
         //tamaño ventana
         frame.setSize(700, 800);
-        //aparece centrada
+        //centrar ventana
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         initComponents();
@@ -70,8 +72,20 @@ public class Ventana {
     }
 
     public void initComponents() {
-        dlmServicios= new DefaultListModel<Servicio>();
+        dlmServicios = new DefaultListModel<Servicio>();
         list1.setModel(dlmServicios);
+    }
+
+    public void crearMenu(){
+        JMenuBar barra = new JMenuBar();
+        JMenu menu = new JMenu("Archivo");
+        itemExportar = new JMenuItem("Exportar XML");
+        itemImportar = new JMenuItem("Importar XML");
+
+        menu.add(itemExportar);
+        menu.add(itemImportar);
+        barra.add(menu);
+        frame.setJMenuBar(barra);
     }
 
 }
