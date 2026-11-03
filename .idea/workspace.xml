@@ -4,11 +4,14 @@
     <list default="true" id="47142ecd-5705-4c65-b545-813d5c837644" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TiendaTatuajesMVC/com/lunapem/tiendatatuajesmvc/gui/ServiciosControlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TiendaTatuajesMVC/com/lunapem/tiendatatuajesmvc/gui/ServiciosControlador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TiendaTatuajesMVC/com/lunapem/tiendatatuajesmvc/gui/ServiciosModelo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TiendaTatuajesMVC/com/lunapem/tiendatatuajesmvc/gui/ServiciosModelo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TiendaTatuajesMVC/com/lunapem/tiendatatuajesmvc/gui/Ventana.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TiendaTatuajesMVC/com/lunapem/tiendatatuajesmvc/gui/Ventana.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servicios.conf" beforeDir="false" afterPath="$PROJECT_DIR$/servicios.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/ServiciosControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/ServiciosControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/ServiciosModelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/ServiciosModelo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/Ventana.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/Ventana.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lunapem/tiendatatuajesmvc/gui/Ventana.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/Util.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,9 +35,10 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="323" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CocheComboBox XML" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -100,7 +104,8 @@
       <workItem from="1793544198188" duration="5417000" />
       <workItem from="1793549706164" duration="591000" />
       <workItem from="1793551327431" duration="569000" />
-      <workItem from="1793628919703" duration="2596000" />
+      <workItem from="1793628919703" duration="3819000" />
+      <workItem from="1793689361820" duration="6689000" />
     </task>
     <servers />
   </component>

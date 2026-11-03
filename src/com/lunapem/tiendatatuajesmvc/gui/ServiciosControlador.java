@@ -48,32 +48,41 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
         if (ventana.telefonoClienteTxt.getText().isEmpty()) {
             campos += "- Teléfono\n";
         }
+        if (ventana.fechaCitaDPicker.getText().isEmpty()) {
+            campos += "- Fecha cita\n";
+        }
         if (ventana.precioTxt.getText().isEmpty()) {
             campos += "- Precio\n";
         }
         if (ventana.zonaTxt.getText().isEmpty()) {
             campos += "- Zona\n";
         }
-        if (ventana.fechaCitaDPicker.getText().isEmpty()) {
-            campos += "- Fecha cita\n";
-        }
         if (ventana.piercingsRadioButton.isSelected()) {
+            if(ventana.tamannoMaterialCmb.getSelectedIndex()<=-1){
+                campos += "- Material\n";
+            }
             if (ventana.estiloTipoJoyaTxt.getText().isEmpty()) {
                 campos += "- Tipo joya\n";
             }
             if (ventana.descripcionAlergiasTxt.getText().isEmpty()) {
                 campos += "- Alergias\n";
             }
+            //if(ventana.sesionesCicatricacionSpn.getValue()){
+
+            //}
         }
         if (ventana.tatuajesRadioButton.isSelected()) {
-            if (ventana.colorTintaTxt.getText().isEmpty()) {
-                campos += "- Color tinta\n";
+            if(ventana.tamannoMaterialCmb.getSelectedIndex()<=-1){
+                campos += "- Tamaño\n";
             }
             if (ventana.estiloTipoJoyaTxt.getText().isEmpty()) {
                 campos += "- Estilo\n";
             }
             if (ventana.descripcionAlergiasTxt.getText().isEmpty()) {
                 campos += "- Descripción\n";
+            }
+            if (ventana.colorTintaTxt.getText().isEmpty()) {
+                campos += "- Color tinta\n";
             }
         }
         return campos;
@@ -89,7 +98,7 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
         ventana.colorTintaTxt.setText(null);
         ventana.estiloTipoJoyaTxt.setText(null);
         ventana.descripcionAlergiasTxt.setText(null);
-        ventana.sesionesCicatricacionSpn.setValue(null);
+        ventana.sesionesCicatricacionSpn.setValue(0);
         ventana.nombreTxt.requestFocus();
     }
 
@@ -218,25 +227,27 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
             case "Eliminar":
                 Servicio servicioEliminar = (Servicio) ventana.list1.getSelectedValue();
 
-                if(servicioEliminar != null){
-                    modelo.eliminarServicio(servicioEliminar);
-                    limpiarCampos();
-                    refrescar();
-                }else{
+                if(servicioEliminar == null){
                     Util.mensajeError("Elige un servicio");
                     break;
                 }
+                modelo.eliminarServicio(servicioEliminar);
+                limpiarCampos();
+                refrescar();
                 break;
             case "Buscar":
-                String nombreClienteBuscar = JOptionPane.showInputDialog(null, "Introduce el nombre del cliente", "Buscar cliente", JOptionPane.QUESTION_MESSAGE);
-
-                if(nombreClienteBuscar != null && !nombreClienteBuscar.trim().isEmpty()){
-                    Servicio encontrado = modelo.buscarServicio(nombreClienteBuscar);
-                    if(encontrado != null){
-                        ventana.list1.setSelectedValue(encontrado, true);
-                    }else{
-                        Util.mensajeError("Cliente no encontrado");
+                String nombreClienteBuscar = ventana.buscarTxt.getText();
+                boolean encontrado = false;
+                for (Servicio unServicio: modelo.obtenerServicios()){
+                    if(unServicio.getNombreCliente().equalsIgnoreCase(nombreClienteBuscar)){
+                        ventana.list1.setSelectedValue(unServicio,true);
+                        encontrado = true;
+                        break;
                     }
+                }
+                if(!encontrado){
+                    Util.mensajeError("Cliente no encontrado");
+                    break;
                 }
                 break;
             case "Piercings":
@@ -253,8 +264,7 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
                                 }
                         )
                 );
-                ventana.sesionesCicatricacionSpn.setModel(
-                        new SpinnerNumberModel(1.0, 0.5, 365.0, 0.5));
+                ventana.sesionesCicatricacionSpn.setModel(new SpinnerNumberModel());
                 break;
             case "Tatuajes":
                 ventana.tamannoMaterialLbl.setText("Tamaño");
@@ -266,12 +276,11 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
                 ventana.colorTintaTxt.setVisible(true);
                 ventana.tamannoMaterialCmb.setModel(
                         new DefaultComboBoxModel<>(
-                                new String[]{"Pequeño", "Mediano", "Grande", "XL"
+                                new String[]{"Pequeño", "Mediano", "Grande"
                                 }
                         )
                 );
-                ventana.sesionesCicatricacionSpn.setModel(
-                        new SpinnerNumberModel(1, 1, 100, 1));
+                ventana.sesionesCicatricacionSpn.setModel(new SpinnerNumberModel());
                 break;
         }
 
@@ -299,7 +308,6 @@ public class ServiciosControlador implements ActionListener, ListSelectionListen
             ventana.fechaCitaDPicker.setDate(servicioSeleccionado.getFechaCita());
             ventana.precioTxt.setText(String.valueOf(servicioSeleccionado.getPrecio()));
             ventana.zonaTxt.setText(servicioSeleccionado.getZona());
-
 
             if (servicioSeleccionado instanceof Piercing) {
                 ventana.piercingsRadioButton.doClick();
